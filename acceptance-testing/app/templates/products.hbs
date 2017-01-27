@@ -1,0 +1,17 @@
+{{#each model as |product index|}}
+  <div id="product-{{index}}">
+    {{product.name}}
+    <button type="button" class="btn" {{action 'addToCart' product}}>Add to cart</button>
+  </div>
+{{/each}}
+
+<div id="cart">
+  {{#each cartItems as |cartItem index|}}
+    <div class="cart-item">
+      {{cartItem.name}}
+    </div>
+  {{/each}}
+</div>
+
+
+{{outlet}}
